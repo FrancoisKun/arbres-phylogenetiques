@@ -1,0 +1,9 @@
+Fichiers de tests, dans l'ordre de taille:
+Tous sont utilisables dans tous les actes.
+
+- arbre-simple.test
+- primates.test
+- mammalia.test
+- amphibians.test
+- recherche-APP4.test
+
