@@ -4,8 +4,20 @@
 #define N 100
 
 int hauteur (noeud *racine) {
-  /* à compléter */
-  return 0;
+  int h1=0,h2=0;
+  if(racine->droit == NULL && racine->gauche==NULL) 
+    return 1;
+  else if (racine->droit == NULL && racine->gauche !=NULL)
+      return 1+hauteur(racine->gauche);
+  else if (racine->droit != NULL && racine->gauche ==NULL)
+      return 1+hauteur(racine->droit);
+  else{ 
+    if((h1=hauteur(racine->droit)) < (h2=hauteur(racine->gauche)) )
+      return 1+h2;
+    else 
+       return 1+h1;
+  }
+  return 0; /* normalement on arrive jamais ici */
 }
 
 void recherche (noeud *racine, char *espece) {
