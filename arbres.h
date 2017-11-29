@@ -15,7 +15,7 @@ noeud* nouveau_noeud (void);
 
 /* Lit un nouveau arbre ou sous-arbre depuis le fichier ouvert f.
  * Renvoie la racine de cet arbre.
- * Fonction récursive (s'appelle elle-même pour la lecture des fils 
+ * Fonction récursive (s'appelle elle-même pour la lecture des fils
  * gauche et droit).
  */
 noeud* lire_arbre (FILE *f);
@@ -28,5 +28,6 @@ void affiche_arbre (noeud*);
 extern  int     DEBUG;
 #define debug(fmt, ...) \
             do { if (DEBUG) fprintf(stderr, fmt, ##__VA_ARGS__); } while (0)
+
 
 #endif

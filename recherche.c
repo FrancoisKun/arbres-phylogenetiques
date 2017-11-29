@@ -6,8 +6,8 @@
 
 int DEBUG = 0;
 
-int main(int argc, char* argv[])
-{
+
+int main(int argc, char* argv[]) {
     /* à compléter */
     return 0;
 }

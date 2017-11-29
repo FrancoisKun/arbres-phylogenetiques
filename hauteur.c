@@ -6,8 +6,8 @@
 
 int DEBUG = 0;
 
-int main(int argc, char* argv[])
-{
+
+int main(int argc, char* argv[]) {
     char *fichier = NULL;
 
     if (argc < 2) {
@@ -49,7 +49,6 @@ int main(int argc, char* argv[])
 
     affiche_arbre (arbre);
     printf ("Hauteur de l'arbre: %d\n", hauteur (arbre));
-
 
     return 0;
 }

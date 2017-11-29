@@ -7,8 +7,8 @@
 
 #include "arbres.h"
 
-noeud* nouveau_noeud(void)
-{
+
+noeud* nouveau_noeud(void) {
     noeud *n = (noeud*)malloc(sizeof(noeud));
     assert (n!=NULL);
     n->valeur = NULL;
@@ -35,8 +35,7 @@ static char next_char = ' ';
 /* Fonction récursive qui lit un sous-arbre */
 /* Appelée une fois à la racine (debut du fichier), puis récursivement
  * pour chaque nœud interne rencontré. */
-noeud* lire_arbre(FILE *f)
-{
+noeud* lire_arbre(FILE *f) {
     noeud *racine;
 
     GLOB(f); /* lit dans next_char le premier caractère non vide */
@@ -85,10 +84,6 @@ noeud* lire_arbre(FILE *f)
     return racine;
 }
 
-
-
-void affiche_arbre (noeud *racine)
-{
+void affiche_arbre (noeud *racine) {
     /* à remplir */
 }
-
