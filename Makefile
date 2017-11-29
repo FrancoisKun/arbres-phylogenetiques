@@ -1,7 +1,7 @@
-all: hauteur
+all: recherche
 
-CC=clang
-CFLAGS=-g -Wall -Wextra #-Werror
+CC=gcc
+CFLAGS=-g -Wall -Wextra -Werror
 
 hauteur: hauteur.o arbresphylo.o arbres.o
 
