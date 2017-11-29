@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "arbres.h"
 
+#define N 100
 
 int hauteur (noeud *racine) {
   /* à compléter */
@@ -27,12 +28,26 @@ void recherche (noeud *racine, char *espece) {
   return 1;
 }
 
-void classifie (noeud *racine, char *espece, int i) {
-  if (racine.gauche.valeur == NULL && racine.droit.valeur == NULL)
-    return 0;
-  else {
-    //ajouter(tab[i], racine); // TODO
-    classifie(racine.gauche, espece, i+1); // TODO
-    classifie(racine.droit, espece, i+1); // TODO
+// Classifie ...
+void classifie (noeud *racine, int niveaux_class[N][N], int i) {
+  if (racine.valeur != NULL) {
+    if (est_caracteristique(racine)) {
+      ajouter_caracteristique(niveaux_class, racine, i); // TODO
+      classifie(racine.gauche, niveaux_class, i+1); // TODO
+      classifie(racine.droit, niveaux_class, i+1); // TODO
+    }
   }
+}
+
+// Renvoie vrai si le noeud est une caractéristique, faux si c'est une espèce
+int est_caracteristique(noeud *n) {
+  return !(n.gauche.valeur == NULL || n.droit.valeur == NULL);
+}
+
+// Ajoute une caractéristique au tableau de niveaux de classification
+void ajouter_caracteristique(noeud *n, int niveaux_class[N][N], int i) {
+  int j = 0;
+  while (niveaux_class[i][j] != '\0') j++;
+  niveaux_class[i][j] = n.valeur;
+  niveaux_class[i][j+1] = '\0';
 }
